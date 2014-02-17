@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:id="@+id/about_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+       
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left|center"
+            android:layout_weight="2"
+            android:adjustViewBounds="true"
+            android:maxWidth="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wine_logo" />
+
+        <TextView
+            android:id="@+id/about_app_text" 
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_margin="8dp"
+            android:gravity="left|center"
+            android:layout_gravity="left"
+            android:text="hello world!\nthis is a test"
+            android:layout_weight="1" />
+        
+    </LinearLayout>
+    
+    
+        <TextView
+            android:id="@+id/copyright_text"
+            android:layout_margin="8dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:text="Hello again world!" />
+    
+        
+
+</LinearLayout>
