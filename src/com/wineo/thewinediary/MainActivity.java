@@ -1,6 +1,6 @@
 package com.wineo.thewinediary;
 
-import come.wineo.thewinediary.dialogs.AboutDialogFragment;
+import com.wineo.thewinediary.dialogs.AboutDialogFragment;
 
 import android.os.Bundle;
 import android.app.ActionBar;
