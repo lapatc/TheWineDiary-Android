@@ -1,6 +1,9 @@
 package com.wineo.thewinediary;
 
 import com.wineo.thewinediary.dialogs.AboutDialogFragment;
+import com.wineo.thewinediary.listeners.MainTabListener;
+import com.wineo.thewinediary.recipes.RecipeDrawerFragment;
+import com.wineo.thewinediary.winevault.WineVaultFragment;
 
 import android.os.Bundle;
 import android.app.ActionBar;
@@ -13,7 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -21,37 +24,27 @@ public class MainActivity extends Activity {
 		ActionBar actionBar = getActionBar();
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		
-		ActionBar.TabListener tabListener = new ActionBar.TabListener() {
-			
-			@Override
-			public void onTabUnselected(Tab tab, FragmentTransaction ft) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onTabSelected(Tab tab, FragmentTransaction ft) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onTabReselected(Tab tab, FragmentTransaction ft) {
-				// TODO Auto-generated method stub
-				
-			}
-		};
-		
-		Tab tab = actionBar.newTab().setText("Wine Vault").setTabListener(tabListener);
+		Tab tab = actionBar.newTab().setText("Wine Vault").setTabListener(new MainTabListener<WineVaultFragment>(this, "wine_vault", WineVaultFragment.class));
 		actionBar.addTab(tab);
 		
-		tab = actionBar.newTab().setText("Recipe Drawer").setTabListener(tabListener);
+		tab = actionBar.newTab().setText("Recipe Drawer").setTabListener(new MainTabListener<RecipeDrawerFragment>(this, "recipe_drawer", RecipeDrawerFragment.class));
 		actionBar.addTab(tab);
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		ActionBar actionBar = getActionBar();
+		int selectedTabIndex = actionBar.getSelectedNavigationIndex();
+		outState.putInt("SelectedTab", selectedTabIndex);
 		
-		tab = actionBar.newTab().setText("Recipe Drawer").setTabListener(tabListener);
-		actionBar.addTab(tab);
-		
-		setContentView(R.layout.activity_main);
+		super.onSaveInstanceState(outState);
+	}
+	
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		ActionBar actionBar = getActionBar();
+		actionBar.setSelectedNavigationItem(savedInstanceState.getInt("SelectedTab"));
+		super.onRestoreInstanceState(savedInstanceState);
 	}
 
 	@Override
@@ -75,7 +68,6 @@ public class MainActivity extends Activity {
 			default:
 				return super.onOptionsItemSelected(item);
 		}
-		// TODO Auto-generated method stub
 	}
 	
 	private void openSettingsActivity(){
@@ -94,7 +86,6 @@ public class MainActivity extends Activity {
 		ft.addToBackStack(null);
 		
 		new AboutDialogFragment().show(ft, "dialog");
-//		new AboutDialogFragment().show
 	}
 
 }

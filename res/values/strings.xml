@@ -8,5 +8,8 @@
     
     <string name="title_activity_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <string name="winevault_palceholder">Future Home of the Wine Vault</string>
+    <string name="recipedrawer_placeholder">Future Home of the Recipe Drawer</string>
 
 </resources>
