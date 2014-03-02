@@ -2,7 +2,7 @@ package com.wineo.thewinediary.winevault;
 
 import com.wineo.thewinediary.R;
 import com.wineo.thewinediary.winevault.adapter.WineListResourceAdapter;
-import com.wineo.thewinediary.winevault.model.WineDatabaseHelper;
+import com.wineo.thewinediary.winevault.database.WineDatabaseHelper;
 
 import android.app.ListFragment;
 import android.os.Bundle;
