@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+    <RelativeLayout
+        android:id="@+id/floating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+	    <TextView
+	        android:id="@+id/wineDetailFloater_name"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="8dp"
+	        android:layout_alignParentLeft="true"
+	        android:textSize="22sp"
+	        android:textStyle="bold"
+	        />
+	    
+	    <TextView
+	        android:id="@+id/wineDetailFloater_winery"
+	        android:layout_margin="8dp"
+	        android:layout_height="wrap_content"
+	        android:layout_width ="wrap_content"
+	        android:layout_below="@id/wineDetailFloater_name"
+	        android:textSize="18sp" 
+	        />
+	    
+	    <TextView
+	        android:id="@+id/wineDetailFloater_Location"
+	        android:layout_margin="8dp"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_below="@id/wineDetailFloater_winery"
+	        android:textSize="18sp"
+	        android:textStyle="italic"
+	        />
+    </RelativeLayout>
+    
+    <View
+        android:layout_below="@id/floating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:background="@drawable/drop_shadow">
+        
+    </View>
+    
+
+</RelativeLayout>
